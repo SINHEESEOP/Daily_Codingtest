@@ -12,7 +12,7 @@
 / (root)
 ├── README.md         # 프로젝트 설명서 ✏️
 └── src/
-    ├── 소수찾기.java   # 예제 문제: 소수 찾기 📝
+    ├── baekjoon.silver.소수찾기.java   # 예제 문제: 소수 찾기 📝
     └── ...           # 기타 문제 파일들
 ```
 
@@ -22,15 +22,15 @@
 ### Windows PowerShell
 명령어:
 ```
-javac src/소수찾기.java
-java -cp src 소수찾기
+javac src/baekjoon.silver.소수찾기.java
+java -cp src baekjoon.silver.소수찾기
 ```
 
 ### Linux Terminal
 명령어:
 ```
-javac src/소수찾기.java
-java -cp src 소수찾기
+javac src/baekjoon.silver.소수찾기.java
+java -cp src baekjoon.silver.소수찾기
 ```
 
 ## 기여 방법 💡

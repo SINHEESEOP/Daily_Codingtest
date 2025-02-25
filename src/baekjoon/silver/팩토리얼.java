@@ -1,3 +1,5 @@
+package baekjoon.silver;
+
 import java.util.Scanner;
 
 public class 팩토리얼 {
