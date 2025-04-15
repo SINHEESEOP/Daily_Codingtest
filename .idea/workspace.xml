@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b76bbeb1-529c-4f84-8bde-a28f167c4064" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/baekjoon/silver/일로만들기.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/baekjoon/silver/일로만들기_풀이.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/baekjoon/silver/정수삼각형.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/baekjoon/silver/정수삼각형.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/baekjoon/silver/일로만들기_풀이.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/baekjoon/silver/일로만들기_풀이.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744254876101</updated>
       <workItem from="1744254879560" duration="16197000" />
-      <workItem from="1744677843210" duration="7277000" />
+      <workItem from="1744677843210" duration="7667000" />
     </task>
     <servers />
   </component>
