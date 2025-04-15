@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b76bbeb1-529c-4f84-8bde-a28f167c4064" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/baekjoon/silver/일곱난쟁이.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/programmers/level1/문자열p와y의개수.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily_CodingTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_CodingTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gold/하노이의탑.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gold/하노이의탑.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/silver/일로만들기.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/baekjoon/silver/일로만들기_풀이.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/baekjoon/silver/정수삼각형.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/baekjoon/silver/정수삼각형.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,10 +25,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2vWJPgIedMv70Ax97sywe9s83TC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -48,7 +46,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+    "vue.rearranger.settings.migration": "true",
+    "애플리케이션.일로만들기.executor": "Run"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -67,11 +66,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1744254876101</updated>
-      <workItem from="1744254879560" duration="14195000" />
+      <workItem from="1744254879560" duration="16197000" />
+      <workItem from="1744677843210" duration="7277000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

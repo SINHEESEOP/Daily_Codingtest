@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class 정수삼각형 {
 
+    // 시간 초과로 정답 확인함.
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -20,6 +21,7 @@ public class 정수삼각형 {
 
         // 첫 줄 초기화
         dp[0][0] = triangle[0][0];
+
 
         // DP로 최대 합 계산
         for (int i = 1; i < n; i++) {
