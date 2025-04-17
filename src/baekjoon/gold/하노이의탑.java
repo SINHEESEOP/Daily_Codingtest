@@ -1,4 +1,4 @@
-package gold;
+package baekjoon.gold;
 
 public class 하노이의탑 {
 
