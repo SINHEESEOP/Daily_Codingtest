@@ -1,0 +1,59 @@
+package baekjoon.silver;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+import java.io.*;
+import java.util.*;
+
+public class 랜선자르기 {
+
+    public static void main(String[] args) throws IOException {
+        // 1. 입력 처리
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int existingCount = Integer.parseInt(st.nextToken()); // N
+        int requiredCount = Integer.parseInt(st.nextToken()); // K
+
+        long[] cables = new long[existingCount];
+        long maxCable = 0;
+        for (int i = 0; i < existingCount; i++) {
+            cables[i] = Long.parseLong(br.readLine());
+            if (cables[i] > maxCable) {
+                maxCable = cables[i];
+            }
+        }
+
+        // 2. 이분 탐색 범위 설정
+        long left = 1;            // 최소 자를 수 있는 길이
+        long right = maxCable;    // 최대 자를 수 있는 길이
+        long answer = 0;          // 정답이 될 수 있는 최대 길이
+
+        // 3. 이분 탐색 반복
+        while (left <= right) {
+            long mid = (left + right) / 2;
+            // mid 길이로 잘랐을 때 몇 개가 나오는지 계산
+            long pieces = 0;
+            for (long cable : cables) {
+                pieces += cable / mid;
+            }
+
+            // 원하는 개수 이상이면, mid를 정답 후보로 기록하고 더 긴 길이 시도
+            if (pieces >= requiredCount) {
+                answer = mid;
+                left = mid + 1;
+            }
+            // 원하는 개수에 못 미치면, 자르는 길이를 줄여야 함
+
+            else {
+                right = mid - 1;
+            }
+        }
+
+        // 4. 결과 출력
+        System.out.println(answer);
+    }
+}
+
