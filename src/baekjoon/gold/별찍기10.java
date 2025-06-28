@@ -41,7 +41,7 @@ public class 별찍기10 {
         // 상(좌,중,우)
         drawStars(y, x, half);
         drawStars(y, x + half, half);
-        drawStars(y, x + half * 2, half);
+         drawStars(y, x + half * 2, half);
 
         // 중(좌,우)
         drawStars(y + half, x, half);
