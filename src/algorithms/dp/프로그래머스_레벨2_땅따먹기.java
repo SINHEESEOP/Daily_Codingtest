@@ -1,6 +1,9 @@
-package programmers.level2;
+package algorithms.dp;
 
-public class 땅따먹기 {
+// 🎯 DP 문제: 땅따먹기 (프로그래머스 레벨2)
+// 💡 같은 열을 연속으로 밟을 수 없는 조건에서 최대 점수 구하기
+// ⚡ 시간복잡도: O(N), 공간복잡도: O(1) - in-place DP
+public class 프로그래머스_레벨2_땅따먹기 {
 
     public static void main(String[] args) {
         int result = solution(new int[][]{ {1,2,3,5}, {5,6,7,8}, {4,3,2,1}} );
@@ -41,6 +44,4 @@ public class 땅따먹기 {
                 Math.max(land[last][2], land[last][3])
         );
     }
-
-
-}
+} 
