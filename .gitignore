@@ -1,4 +1,33 @@
+# Java 컴파일 파일들 🔥
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+# 로그 파일들 📝
+*.log
+
+# 패키지 파일들 📦
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
 ### IntelliJ IDEA ###
+# 전체 .idea 디렉토리 🧠
+.idea/
+
+# IntelliJ 모듈 파일들 📄
+*.iml
+*.ipr
+*.iws
+
+# IntelliJ 빌드 출력 📁
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
@@ -25,5 +54,127 @@ bin/
 ### VS Code ###
 .vscode/
 
+# Maven 관련 파일들 🏗️
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle 관련 파일들 🔧
+.gradle
+**/build/
+!src/**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# 운영체제별 파일들 💻
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
 ### Mac OS ###
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Linux ###
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# 임시 파일들 📝
+*.tmp
+*.temp
+*.swp
+*.swo
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# 백업 파일들 💾
+*.bak
+*.backup
+*.old
+*.orig
+
+# 개발 도구 관련 파일들 🛠️
+.metadata
+.recommenders
+.project
+.settings
+.classpath
+
+# BlueJ 관련 📘
+*.ctxt
+
+# Mobile Tools for Java (J2ME) 📱
+.mtj.tmp/
+
+# 가상환경 파일들 🌐
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# 테스트 관련 파일들 🧪
+TEST-*.xml
+test-output/
+.tox/
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Node.js 관련 파일들 (필요한 경우) 📦
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# 기타 시스템 파일들 🗂️
+*.pid
+*.seed
+*.pid.lock
+.nyc_output
