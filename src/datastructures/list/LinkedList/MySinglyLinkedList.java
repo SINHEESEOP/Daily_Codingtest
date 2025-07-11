@@ -1,4 +1,7 @@
-package datastructures.list;
+package datastructures.list.LinkedList;
+
+import datastructures.list.MyDeque;
+import datastructures.list.MyList;
 
 public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
 

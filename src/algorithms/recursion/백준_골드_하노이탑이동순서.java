@@ -1,10 +1,10 @@
-package baekjoon.gold;
+package algorithms.recursion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class 하노이탑이동순서 {
+public class 백준_골드_하노이탑이동순서 {
 
     private static int cnt;
     private static final StringBuilder sb = new StringBuilder();

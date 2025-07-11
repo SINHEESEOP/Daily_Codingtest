@@ -1,11 +1,11 @@
-package baekjoon.silver;
+package algorithms.recursion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class 색종이접기 {
+public class 백준_실버_색종이접기 {
 
     static int white = 0;
     static int blue = 0;
