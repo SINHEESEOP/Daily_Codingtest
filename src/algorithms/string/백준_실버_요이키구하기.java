@@ -1,4 +1,4 @@
-﻿package algorithms.string;
+package algorithms.string;
 
 import java.io.*;
 import java.util.*;

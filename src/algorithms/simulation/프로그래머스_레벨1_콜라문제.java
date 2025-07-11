@@ -1,4 +1,4 @@
-﻿package algorithms.simulation;
+package algorithms.simulation;
 
 public class 프로그래머스_레벨1_콜라문제 {
 

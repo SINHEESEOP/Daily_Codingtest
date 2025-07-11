@@ -1,4 +1,4 @@
-﻿package datastructures.stack;
+package datastructures.stack;
 
 import java.io.IOException;
 import java.util.Arrays;

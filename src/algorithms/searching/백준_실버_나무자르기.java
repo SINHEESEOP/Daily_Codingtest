@@ -1,4 +1,4 @@
-﻿package algorithms.searching;
+package algorithms.searching;
 
 import java.io.BufferedReader;
 import java.io.IOException;

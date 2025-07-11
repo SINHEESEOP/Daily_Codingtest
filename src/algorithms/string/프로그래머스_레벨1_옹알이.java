@@ -1,4 +1,4 @@
-﻿package algorithms.string;
+package algorithms.string;
 
 public class 프로그래머스_레벨1_옹알이 {
 

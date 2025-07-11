@@ -1,4 +1,4 @@
-﻿package algorithms.simulation;
+package algorithms.simulation;
 
 import java.util.Scanner;
 

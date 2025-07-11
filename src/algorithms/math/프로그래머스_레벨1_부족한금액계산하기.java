@@ -1,4 +1,4 @@
-﻿package algorithms.math;
+package algorithms.math;
 
 public class 프로그래머스_레벨1_부족한금액계산하기 {
 

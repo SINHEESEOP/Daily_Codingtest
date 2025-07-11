@@ -1,4 +1,4 @@
-﻿package algorithms.math;
+package algorithms.math;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

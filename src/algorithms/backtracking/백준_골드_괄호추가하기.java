@@ -1,4 +1,4 @@
-﻿package algorithms.backtracking;
+package algorithms.backtracking;
 
 import java.io.*;
 

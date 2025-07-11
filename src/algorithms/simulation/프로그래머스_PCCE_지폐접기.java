@@ -1,4 +1,4 @@
-﻿package algorithms.simulation;
+package algorithms.simulation;
 
 public class 프로그래머스_PCCE_지폐접기 {
 

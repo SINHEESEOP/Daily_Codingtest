@@ -1,4 +1,4 @@
-﻿package algorithms.dp;
+package algorithms.dp;
 
 import java.io.*;
 import java.util.*;

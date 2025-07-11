@@ -1,4 +1,4 @@
-﻿package algorithms.string;
+package algorithms.string;
 
 public class 프로그래머스_레벨1_문자열p와y의개수 {
     public static void main(String[] args) {

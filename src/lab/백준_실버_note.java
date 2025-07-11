@@ -1,4 +1,4 @@
-﻿package lab;
+package lab;
 
 // 연습중
 public class 백준_실버_note {

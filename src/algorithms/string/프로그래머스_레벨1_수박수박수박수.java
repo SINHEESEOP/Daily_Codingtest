@@ -1,4 +1,4 @@
-﻿package algorithms.string;
+package algorithms.string;
 
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
