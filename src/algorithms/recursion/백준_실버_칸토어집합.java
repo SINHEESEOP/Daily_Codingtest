@@ -1,10 +1,10 @@
-package baekjoon.silver;
+﻿package algorithms.recursion;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
-public class 칸토어집합 {
+public class 백준_실버_칸토어집합 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

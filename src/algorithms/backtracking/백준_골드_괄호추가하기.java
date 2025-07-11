@@ -1,8 +1,8 @@
-package baekjoon.gold;
+﻿package algorithms.backtracking;
 
 import java.io.*;
 
-public class 괄호추가하기 {
+public class 백준_골드_괄호추가하기 {
     static int numCount;       // 숫자의 개수
     static long[] nums;        // 숫자들
     static char[] ops;         // 연산자들

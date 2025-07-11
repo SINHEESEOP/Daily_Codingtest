@@ -1,8 +1,8 @@
-package baekjoon.silver;
+﻿package algorithms.math;
 
 import java.util.Scanner;
 
-public class 팩토리얼 {
+public class 백준_실버_팩토리얼 {
 
     static int fact(int n) {
         if (n == 1) return 1;

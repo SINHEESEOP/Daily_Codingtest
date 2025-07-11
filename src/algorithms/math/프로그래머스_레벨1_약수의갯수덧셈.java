@@ -1,8 +1,8 @@
-package programmers.level1;
+﻿package algorithms.math;
 
 import java.util.stream.IntStream;
 
-public class 약수의갯수덧셈 {
+public class 프로그래머스_레벨1_약수의갯수덧셈 {
 
     public static void main(String[] args) {
 

@@ -1,11 +1,11 @@
-package baekjoon.silver;
+﻿package algorithms.math;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class 골드바흐의추측 {
+public class 백준_실버_골드바흐의추측 {
     public static void main(String[] args) throws IOException {
         // BufferedReader를 사용하여 빠른 입력을 처리합니다.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

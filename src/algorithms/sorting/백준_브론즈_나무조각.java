@@ -1,4 +1,4 @@
-package baekjoon.bronze;
+﻿package algorithms.sorting;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class 나무조각 {
+public class 백준_브론즈_나무조각 {
 
     static int[] arr = new int[5];
 

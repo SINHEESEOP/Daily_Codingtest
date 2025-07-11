@@ -1,8 +1,8 @@
-package baekjoon.bronze;
+﻿package algorithms.math;
 
 import java.util.Scanner;
 
-public class 팩토리얼 {
+public class 백준_브론즈_팩토리얼 {
 
     public static void main(String[] args) {
 

@@ -1,7 +1,7 @@
-package baekjoon.silver;
+﻿package lab;
 
 // 연습중
-public class note {
+public class 백준_실버_note {
 
     public static void main(String[] args) {
 

@@ -1,9 +1,9 @@
-package datastructures.list.LinkedList;
+﻿package datastructures.list.LinkedList;
 
 import datastructures.list.MyDeque;
 import datastructures.list.MyList;
 
-public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
+public class MySinglyLinkedList implements MyList<E>, MyDeque<E> {
 
     private Node<E> head, tail;
     private int size;

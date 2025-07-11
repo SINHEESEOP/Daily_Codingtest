@@ -1,9 +1,9 @@
-package baekjoon.gold;
+﻿package algorithms.graph;
 
 import java.io.*;
 import java.util.*;
 
-public class 선수과목 {
+public class 백준_골드_선수과목 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());

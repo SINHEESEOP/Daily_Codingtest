@@ -1,10 +1,10 @@
-package baekjoon.gold;
+﻿package algorithms.two_pointer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.*;
 
-public class 두용액 {
+public class 백준_골드_두용액 {
 
     public static void main(String[] args) throws IOException {
 

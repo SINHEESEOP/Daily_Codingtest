@@ -1,9 +1,9 @@
-package baekjoon.silver;
+﻿package datastructures.set;
 
 import java.io.*;
 import java.util.*;
 
-public class 집합 {
+public class 백준_실버_집합 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

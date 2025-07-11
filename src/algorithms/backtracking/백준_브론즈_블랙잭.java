@@ -1,11 +1,11 @@
-package baekjoon.bronze;
+﻿package algorithms.backtracking;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class 블랙잭 {
+public class 백준_브론즈_블랙잭 {
 
     static int[] arr;
     static int N;

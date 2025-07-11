@@ -1,11 +1,11 @@
-package baekjoon.silver;
+﻿package algorithms.recursion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class 종이의개수 {
+public class 백준_실버_종이의개수 {
 
     static int[][] paper;
     static int zero = 0;

@@ -1,11 +1,11 @@
-package programmers.level1;
+﻿package algorithms.sorting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class 문자열내림차순정하기 {
+public class 프로그래머스_레벨1_문자열내림차순정하기 {
 
     public static void main(String[] args) {
 

@@ -1,8 +1,8 @@
-package baekjoon.silver;
+﻿package algorithms.dp;
 
 import java.util.Scanner;
 
-public class 타일장식물 {
+public class 백준_실버_타일장식물 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

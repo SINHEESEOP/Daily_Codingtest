@@ -1,10 +1,10 @@
-package baekjoon.gold;
+﻿package algorithms.backtracking;
 
 import java.io.*;
 import java.util.*;
 
 // 시간초과 정답 확인.
-public class 치킨배달 {
+public class 백준_골드_치킨배달 {
     static int N, M;
     static List<int[]> houses = new ArrayList<>();
     static List<int[]> chickens = new ArrayList<>();

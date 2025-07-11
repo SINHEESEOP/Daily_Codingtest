@@ -1,6 +1,6 @@
-package baekjoon.gold;
+﻿package algorithms.recursion;
 
-public class 하노이의탑 {
+public class 백준_골드_하노이의탑 {
 
     public static void main(String[] args) {
         int n = 3; // 원판 개수 (예제: 3개)

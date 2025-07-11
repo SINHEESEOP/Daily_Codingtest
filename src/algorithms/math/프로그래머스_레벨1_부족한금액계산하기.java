@@ -1,6 +1,6 @@
-package programmers.level1;
+﻿package algorithms.math;
 
-public class 부족한금액계산하기 {
+public class 프로그래머스_레벨1_부족한금액계산하기 {
 
     public static void main(String[] args) {
         System.out.println(solution(3, 20, 5));

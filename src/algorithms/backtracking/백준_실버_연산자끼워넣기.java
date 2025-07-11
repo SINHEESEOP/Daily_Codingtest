@@ -1,4 +1,4 @@
-package baekjoon.silver;
+﻿package algorithms.backtracking;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 
 import java.io.*;
 
-public class 연산자끼워넣기 {
+public class 백준_실버_연산자끼워넣기 {
     static int N;
     static int[] numbers;
     static int[] ops = new int[4]; // +, -, *, /

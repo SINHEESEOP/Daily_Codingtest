@@ -1,8 +1,8 @@
-package baekjoon.silver;
+﻿package algorithms.recursion;
 
 import java.util.Scanner;
 
-public class 재귀함수가뭔가요 {
+public class 백준_실버_재귀함수가뭔가요 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

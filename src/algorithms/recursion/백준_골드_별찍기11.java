@@ -1,10 +1,10 @@
-package baekjoon.gold;
+﻿package algorithms.recursion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class 별찍기11 {
+public class 백준_골드_별찍기11 {
 
     static char[][] star;
 

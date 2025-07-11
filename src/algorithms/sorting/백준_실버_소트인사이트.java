@@ -1,10 +1,10 @@
-package baekjoon.silver;
+﻿package algorithms.sorting;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class 소트인사이트 {
+public class 백준_실버_소트인사이트 {
 
     static char[] arr;
     static char[] copyArr;

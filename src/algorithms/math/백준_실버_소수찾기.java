@@ -1,11 +1,11 @@
-package baekjoon.silver;
+﻿package algorithms.math;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class 소수찾기 {
+public class 백준_실버_소수찾기 {
 
     public static void main(String[] args) throws IOException {
         // 빠른 입력 처리를 위한 BufferedReader

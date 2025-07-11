@@ -1,11 +1,11 @@
-package baekjoon.gold;
+﻿package algorithms.graph;
 
 import java.io.*;
 import java.util.*;
 
 
 //
-public class 토마토 {
+public class 백준_골드_토마토 {
 
     static int M, N;
     static int[][] box;

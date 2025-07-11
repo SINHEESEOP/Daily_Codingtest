@@ -1,11 +1,11 @@
-package baekjoon.silver;
+﻿package algorithms.math;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class 곱셈 {
+public class 백준_실버_곱셈 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

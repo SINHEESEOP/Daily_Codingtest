@@ -1,11 +1,11 @@
-package baekjoon.silver;
+﻿package algorithms.sorting;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class 좌표압축 {
+public class 백준_실버_좌표압축 {
 
     static int[] arr;
     static int[] result;

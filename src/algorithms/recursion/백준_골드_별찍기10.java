@@ -1,8 +1,8 @@
-package baekjoon.gold;
+﻿package algorithms.recursion;
 
 import java.io.*;
 
-public class 별찍기10 {
+public class 백준_골드_별찍기10 {
     
     static char[][] canvas;
 

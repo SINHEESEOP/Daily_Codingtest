@@ -1,8 +1,8 @@
-package baekjoon.bronze;
+﻿package algorithms.dp;
 
 import java.util.Scanner;
 
-public class Fibonacci {
+public class 백준_브론즈_Fibonacci {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

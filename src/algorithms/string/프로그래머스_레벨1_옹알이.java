@@ -1,6 +1,6 @@
-package programmers.level1;
+﻿package algorithms.string;
 
-public class 옹알이 {
+public class 프로그래머스_레벨1_옹알이 {
 
     static final String[] keywords = {"aya", "ye", "woo", "ma"};
 

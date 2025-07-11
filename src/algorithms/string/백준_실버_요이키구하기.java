@@ -1,10 +1,10 @@
-package baekjoon.silver;
+﻿package algorithms.string;
 
 import java.io.*;
 import java.util.*;
 
 // 정답을 봐도 어렵네요?
-public class 요이키구하기 {
+public class 백준_실버_요이키구하기 {
 
     static int M, N, K;
     static boolean[][] filled;

@@ -1,9 +1,9 @@
-package baekjoon.silver;
+﻿package algorithms.dp;
 
 import java.util.Scanner;
 
 // 난 입사도 못했는데.....
-public class 퇴사 {
+public class 백준_실버_퇴사 {
 
     public static void main(String[] args) {
 

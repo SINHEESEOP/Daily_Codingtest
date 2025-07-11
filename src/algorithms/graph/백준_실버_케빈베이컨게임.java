@@ -1,9 +1,9 @@
-package baekjoon.silver;
+﻿package algorithms.graph;
 
 import java.io.*;
 import java.util.*;
 
-public class 케빈베이컨게임 {
+public class 백준_실버_케빈베이컨게임 {
     public static void main(String[] args) throws IOException {
         // 1) 입력 처리
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

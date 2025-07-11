@@ -1,8 +1,8 @@
-package baekjoon.bronze;
+﻿package algorithms.dp;
 
 import java.util.Scanner;
 
-public class 피보나치수5 {
+public class 백준_브론즈_피보나치수5 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

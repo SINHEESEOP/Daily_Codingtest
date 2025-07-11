@@ -1,11 +1,11 @@
-package baekjoon.gold;
+﻿package algorithms.recursion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Z {
+public class 백준_골드_Z {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

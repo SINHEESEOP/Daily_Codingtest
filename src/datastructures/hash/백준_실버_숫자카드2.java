@@ -1,9 +1,9 @@
-package baekjoon.silver;
+﻿package datastructures.hash;
 
 import java.io.*;
 import java.util.*;
 
-public class 숫자카드2 {
+public class 백준_실버_숫자카드2 {
     public static void main(String[] args) throws IOException {
         // 빠른 입출력
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

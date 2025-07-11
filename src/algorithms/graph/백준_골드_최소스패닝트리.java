@@ -1,9 +1,9 @@
-package baekjoon.gold;
+﻿package algorithms.graph;
 
 import java.io.*;
 import java.util.*;
 
-public class 최소스패닝트리 {
+public class 백준_골드_최소스패닝트리 {
 
     static int V, E;
     static int[] parent;

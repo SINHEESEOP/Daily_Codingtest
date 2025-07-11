@@ -1,8 +1,8 @@
-package baekjoon.silver;
+﻿package algorithms.dp;
 
 import java.util.Scanner;
 
-public class 정수삼각형 {
+public class 백준_실버_정수삼각형 {
 
     // 시간 초과로 정답 확인함.
     public static void main(String[] args) {

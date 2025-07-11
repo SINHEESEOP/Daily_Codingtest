@@ -1,9 +1,9 @@
-package baekjoon.gold;
+﻿package algorithms.dp;
 
 import java.io.*;
 import java.util.*;
 
-public class 자두나무 {
+public class 백준_골드5_자두나무 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));

@@ -1,9 +1,9 @@
-package baekjoon.gold;
+﻿package algorithms.simulation;
 
 import java.io.*;
 import java.util.*;
 
-public class 뱀 {
+public class 백준_골드_뱀 {
     static class Turn {
         int time;
         char dir;

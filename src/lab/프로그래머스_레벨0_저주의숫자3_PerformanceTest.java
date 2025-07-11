@@ -1,6 +1,6 @@
-package programmers.level0;
+﻿package lab;
 
-public class 저주의숫자3_PerformanceTest {
+public class 프로그래머스_레벨0_저주의숫자3_PerformanceTest {
 
     public static void main(String[] args) {
         int n = 1_000_000_000; // 10억

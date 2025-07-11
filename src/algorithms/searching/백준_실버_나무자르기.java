@@ -1,4 +1,4 @@
-package baekjoon.silver;
+﻿package algorithms.searching;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // 랜선 자르기와 나무자르기 한번씩 내일 더풀기.
-public class 나무자르기 {
+public class 백준_실버_나무자르기 {
 
     static int N;
     static int M;

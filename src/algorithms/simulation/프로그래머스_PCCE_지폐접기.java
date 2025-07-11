@@ -1,6 +1,6 @@
-package programmers.PCCE기출문제;
+﻿package algorithms.simulation;
 
-public class 지폐접기 {
+public class 프로그래머스_PCCE_지폐접기 {
 
     public static void main(String[] args) {
         int[] wallet1 = {30, 15};

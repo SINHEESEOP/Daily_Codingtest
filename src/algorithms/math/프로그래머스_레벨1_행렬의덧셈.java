@@ -1,8 +1,8 @@
-package programmers.level1;
+﻿package algorithms.math;
 
 import java.util.Arrays;
 
-public class 행렬의덧셈 {
+public class 프로그래머스_레벨1_행렬의덧셈 {
 
     public static void main(String[] args) {
         System.out.println(Arrays.deepToString(solution(new int[][]{{1, 2}, {2, 3}}, new int[][]{{3, 4}, {5, 6}})));

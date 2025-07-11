@@ -1,4 +1,4 @@
-package baekjoon.silver;
+﻿package algorithms.backtracking;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class 부분수열의합 {
+public class 백준_실버_부분수열의합 {
 
     static int cnt;
     static int N;

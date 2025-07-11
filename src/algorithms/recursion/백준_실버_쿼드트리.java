@@ -1,10 +1,10 @@
-package baekjoon.silver;
+﻿package algorithms.recursion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class 쿼드트리 {
+public class 백준_실버_쿼드트리 {
 
     static char[][] table;
     static StringBuilder sb = new StringBuilder();

@@ -1,9 +1,9 @@
-package baekjoon.gold;
+﻿package algorithms.dp;
 
 import java.io.*;
 import java.util.*;
 
-public class 파이프옮기기1 {
+public class 백준_골드_파이프옮기기1 {
     static int N;
     static int[][] grid;
     // dp[i][j][d]: (i,j) 끝을 향해 파이프가 d 방향으로 놓여 있을 때 경우의 수

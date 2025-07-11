@@ -1,9 +1,9 @@
-package baekjoon.silver;
+﻿package algorithms.graph;
 
 import java.io.*;
 import java.util.*;
 
-public class 스타트링크 {
+public class 백준_실버_스타트링크 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

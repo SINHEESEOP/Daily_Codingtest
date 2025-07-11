@@ -1,6 +1,6 @@
-package programmers.level1;
+﻿package algorithms.simulation;
 
-public class 콜라문제 {
+public class 프로그래머스_레벨1_콜라문제 {
 
     public static void main(String[] args) {
 

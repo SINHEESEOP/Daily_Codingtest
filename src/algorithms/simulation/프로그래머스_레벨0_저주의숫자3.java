@@ -1,8 +1,8 @@
-package programmers.level0;
+﻿package algorithms.simulation;
 
 import java.util.Scanner;
 
-public class 저주의숫자3 {
+public class 프로그래머스_레벨0_저주의숫자3 {
 
     public static void main(String[] args) {
 

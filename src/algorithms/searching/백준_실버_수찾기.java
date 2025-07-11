@@ -1,10 +1,10 @@
-package baekjoon.silver;
+﻿package algorithms.searching;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.*;
 
-public class 수찾기 {
+public class 백준_실버_수찾기 {
 
     static int N;
     static int M;

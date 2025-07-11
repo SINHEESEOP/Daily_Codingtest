@@ -1,4 +1,4 @@
-package programmers.level1;
+﻿package datastructures.stack;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -6,7 +6,7 @@ import java.util.Stack;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class 같은숫자는싫어 {
+public class 프로그래머스_레벨1_같은숫자는싫어 {
 
     public static void main(String[] args) throws IOException {
 

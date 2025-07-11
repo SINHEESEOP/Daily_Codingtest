@@ -1,9 +1,9 @@
-package baekjoon.silver;
+﻿package algorithms.searching;
 
 import java.io.*;
 import java.util.*;
 
-public class 랜선자르기 {
+public class 백준_실버_랜선자르기 {
 
     public static void main(String[] args) throws IOException {
         // 1. 입력 처리

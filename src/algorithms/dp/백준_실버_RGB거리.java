@@ -1,11 +1,11 @@
-package baekjoon.silver;
+﻿package algorithms.dp;
 
 import java.io.*;
 import java.util.*;
 
 
 // 시간초과, 정답 확인
-public class RGB거리 {
+public class 백준_실버_RGB거리 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

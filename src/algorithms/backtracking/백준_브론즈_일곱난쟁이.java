@@ -1,9 +1,9 @@
-package baekjoon.bronze;
+﻿package algorithms.backtracking;
 
 import java.io.*;
 import java.util.*;
 
-public class 일곱난쟁이 {
+public class 백준_브론즈_일곱난쟁이 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

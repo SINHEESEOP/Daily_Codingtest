@@ -1,9 +1,9 @@
-package baekjoon.gold;
+﻿package algorithms.dp;
 
 import java.io.*;
 import java.util.*;
 
-public class 내려가기 {
+public class 백준_골드5_내려가기 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

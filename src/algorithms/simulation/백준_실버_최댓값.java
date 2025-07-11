@@ -1,10 +1,10 @@
-package baekjoon.silver;
+﻿package algorithms.simulation;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class 최댓값 {
+public class 백준_실버_최댓값 {
 
     public static void main(String[] args) throws IOException {
 

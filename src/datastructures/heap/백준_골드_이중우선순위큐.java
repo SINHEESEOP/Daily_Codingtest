@@ -1,9 +1,9 @@
-package baekjoon.gold;
+﻿package datastructures.heap;
 
 import java.io.*;
 import java.util.*;
 
-public class 이중우선순위큐 {
+public class 백준_골드_이중우선순위큐 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader  reader = new BufferedReader(new InputStreamReader(System.in));

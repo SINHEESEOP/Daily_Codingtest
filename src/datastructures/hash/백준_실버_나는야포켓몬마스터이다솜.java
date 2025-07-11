@@ -1,9 +1,9 @@
-package baekjoon.silver;
+﻿package datastructures.hash;
 
 import java.io.*;
 import java.util.*;
 
-public class 나는야포켓몬마스터이다솜 {
+public class 백준_실버_나는야포켓몬마스터이다솜 {
  
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

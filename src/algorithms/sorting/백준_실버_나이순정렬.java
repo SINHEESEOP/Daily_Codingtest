@@ -1,9 +1,9 @@
-package baekjoon.silver;
+﻿package algorithms.sorting;
 
 import java.io.*;
 import java.util.*;
 
-public class 나이순정렬 {
+public class 백준_실버_나이순정렬 {
 
     static List<Person> people;
     static List<Person> copyPeople;

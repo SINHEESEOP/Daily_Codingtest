@@ -1,11 +1,11 @@
-package baekjoon.bronze;
+﻿package algorithms.recursion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class 재귀의귀재 {
+public class 백준_브론즈_재귀의귀재 {
 
     public static int cnt = 0;
 

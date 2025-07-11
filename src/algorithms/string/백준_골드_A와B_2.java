@@ -1,8 +1,8 @@
-package baekjoon.gold;
+﻿package algorithms.string;
 
 import java.io.*;
 
-public class A와B_2 {
+public class 백준_골드_A와B_2 {
 
     static String S;
     static int answer = 0;

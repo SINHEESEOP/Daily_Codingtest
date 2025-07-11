@@ -1,10 +1,10 @@
-package baekjoon.silver;
+﻿package algorithms.dp;
 
 import java.util.Scanner;
 
 // DP 기출문제_ 1로 만들기 _ 백준 실버문제
 // 30분 시간초과
-public class 일로만들기 {
+public class 백준_실버_일로만들기 {
 
     public static void main(String[] args) {
 
