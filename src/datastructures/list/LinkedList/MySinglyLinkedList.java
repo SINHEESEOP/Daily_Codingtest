@@ -20,7 +20,17 @@ public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
 
     @Override
     public void addFirst(E e) {
+        if (e == null) throw new NullPointerException();
+        if (head == null) {
+            head = tail = new Node<>(e);
+            size++;
+            return;
+        }
 
+        Node<E> temp = head;
+        head = new Node<>(e);
+        head.next = temp;
+        size++;
     }
 
     @Override
@@ -56,7 +66,7 @@ public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
