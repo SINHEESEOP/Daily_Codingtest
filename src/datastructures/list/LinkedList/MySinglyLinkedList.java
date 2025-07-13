@@ -3,6 +3,8 @@ package datastructures.list.LinkedList;
 import datastructures.list.MyDeque;
 import datastructures.list.MyList;
 
+import java.util.NoSuchElementException;
+
 public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
 
     private Node<E> head, tail;
@@ -55,12 +57,34 @@ public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
 
     @Override
     public E removeLast() {
-        return null;
+        if (size == 0) throw new NoSuchElementException();
+
+        Node<E> temp;
+        if (size == 1) {
+            temp = head;
+            head = tail = null;
+            size--;
+            return temp.value;
+        }
+
+        temp = head;
+        while (temp.next != tail) {
+            temp = temp.next;
+        }
+
+        E val = tail.value;
+        temp.next = null;
+        tail = temp;
+        size--;
+        return val;
     }
 
     @Override
     public E get(int index) {
-        Node<E> node = head;
+        while (head.next != null) {
+
+        }
+
         return null;
     }
 
