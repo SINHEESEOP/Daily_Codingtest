@@ -26,7 +26,7 @@ public class 백준_실버2_요세푸스문제 {
 
         LinkedList<Integer> list = new LinkedList<>();
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
            list.add(i);
         }
 

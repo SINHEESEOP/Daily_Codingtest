@@ -81,11 +81,14 @@ public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
 
     @Override
     public E get(int index) {
-        while (head.next != null) {
+        if (size == 0) throw new NoSuchElementException();
+        if (size - 1 < index || 0 > index) throw new IndexOutOfBoundsException();
 
+        Node <E> temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
         }
-
-        return null;
+        return temp.value;
     }
 
     @Override
