@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 /**
  * 문제 풀이 접근 방식
- * - 대표적인 링크드리스트를 활용하는 문제이다.
+ * - 대표적인 링크드리스트 + 원형큐의 원리를 활용하는 문제이다.
  *
  * 이유.
  * 간단하다. 리스트에서 삭제가 자주 일어난다면 배열이 아닌 링크드리스트가 좋다.
@@ -32,10 +32,18 @@ public class 백준_실버2_요세푸스문제 {
 
         StringBuilder sb = new StringBuilder();
         sb.append("<");
-        for (int i = 0; i < n; i++) {
-            sb.append(list.remove(3));
-            sb.append(", ");
+
+        int index = 0;
+
+        while (!list.isEmpty()) {
+            index = (index + k - 1) % list.size(); // 원형 순회
+            sb.append(list.remove(index));
+
+            if (!list.isEmpty()) {
+                sb.append(", ");
+            }
         }
+
         sb.append(">");
         System.out.println(sb);
     }
