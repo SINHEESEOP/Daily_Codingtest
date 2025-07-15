@@ -1,4 +1,4 @@
-package datastructures.list.LinkedList;
+package hard_queue.hard_slot;
 
 import java.io.BufferedReader;
 import java.io.IOException;
