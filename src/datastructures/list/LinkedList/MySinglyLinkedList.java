@@ -37,22 +37,36 @@ public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
 
     @Override
     public E getFirst() {
-        return null;
+        if (head == null) throw new NoSuchElementException();
+        return head.value;
     }
 
     @Override
     public E removeFirst() {
-        return null;
+        if (head == null) throw new NoSuchElementException();
+        if (size == 1) tail = null;
+
+        Node<E> temp = head;
+        head = head.next;
+        size--;
+        return  temp.value;
     }
 
     @Override
     public void addLast(E e) {
-
+        if (tail == null) {
+            head = tail =  new Node<>(e);
+        } else {
+            tail.next = new Node<>(e);
+            tail = tail.next;
+        }
+        size++;
     }
 
     @Override
     public E getLast() {
-        return null;
+        if (tail == null) throw new NoSuchElementException();
+        return tail.value;
     }
 
     @Override
@@ -148,7 +162,16 @@ public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
 
     @Override
     public E set(int index, E e) {
-        return null;
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+
+        Node<E> temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+
+        E oldValue = temp.value;
+        temp.value = e;
+        return oldValue;
     }
 
     @Override
