@@ -1,11 +1,15 @@
 package datastructures.list.LinkedList;
 
-import datastructures.list.MyDeque;
 import datastructures.list.MyList;
 
 import java.util.NoSuchElementException;
 
-public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
+/**
+ * 이거 단방향 리스트라, MyDeque 는 상속받을 필요 X
+ * 단반향도 맨앞과 맨뒤에 연산이 가능하지만, 맨뒤에 넣거나 삭제하는 경우 효율 X
+ * 양방향에서 둘다 구현 하는 걸로.
+ */
+public class MySinglyLinkedList<E> implements MyList<E> {
 
     private Node<E> head, tail;
     private int size;
@@ -18,79 +22,6 @@ public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
         Node(E v) {
             value = v;
         }
-    }
-
-    @Override
-    public void addFirst(E e) {
-        if (e == null) throw new NullPointerException();
-        if (head == null) {
-            head = tail = new Node<>(e);
-            size++;
-            return;
-        }
-
-        Node<E> temp = head;
-        head = new Node<>(e);
-        head.next = temp;
-        size++;
-    }
-
-    @Override
-    public E getFirst() {
-        if (head == null) throw new NoSuchElementException();
-        return head.value;
-    }
-
-    @Override
-    public E removeFirst() {
-        if (head == null) throw new NoSuchElementException();
-        if (size == 1) tail = null;
-
-        Node<E> temp = head;
-        head = head.next;
-        size--;
-        return  temp.value;
-    }
-
-    @Override
-    public void addLast(E e) {
-        if (tail == null) {
-            head = tail =  new Node<>(e);
-        } else {
-            tail.next = new Node<>(e);
-            tail = tail.next;
-        }
-        size++;
-    }
-
-    @Override
-    public E getLast() {
-        if (tail == null) throw new NoSuchElementException();
-        return tail.value;
-    }
-
-    @Override
-    public E removeLast() {
-        if (size == 0) throw new NoSuchElementException();
-
-        Node<E> temp;
-        if (size == 1) {
-            temp = head;
-            head = tail = null;
-            size--;
-            return temp.value;
-        }
-
-        temp = head;
-        while (temp.next != tail) {
-            temp = temp.next;
-        }
-
-        E val = tail.value;
-        temp.next = null;
-        tail = temp;
-        size--;
-        return val;
     }
 
     @Override
@@ -176,7 +107,57 @@ public class MySinglyLinkedList<E> implements MyList<E>, MyDeque<E> {
 
     @Override
     public E remove(int index) {
-        return null;
+        if (size <= index || index < 0) throw new IndexOutOfBoundsException();
+        if (size == 1) {
+            Node<E> temp = head;
+            head = tail = null;
+            size--;
+            return temp.value;
+        }
+
+        Node<E> temp = head;
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
+        }
+        Node<E> temp2 = temp.next;
+        temp.next = temp.next.next;
+        size--;
+        return temp2.value;
+    }
+
+    // 그려보면서 이해해야 할 듯
+    public E remove2(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException(
+                    "Index: " + index + ", Size: " + size
+            );
+        }
+
+        Node<E> removedNode;
+        if (index == 0) {
+            // 맨 앞 요소 삭제
+            removedNode = head;
+            head = head.next;
+            if (head == null) {
+                // 리스트가 비게 되면 tail도 null 처리
+                tail = null;
+            }
+        } else {
+            // 삭제할 노드의 이전 노드(prev)를 찾음
+            Node<E> prev = head;
+            for (int i = 0; i < index - 1; i++) {
+                prev = prev.next;
+            }
+            removedNode = prev.next;
+            prev.next = removedNode.next;
+            if (removedNode == tail) {
+                // 마지막 노드 삭제 시 tail 갱신
+                tail = prev;
+            }
+        }
+
+        size--;
+        return removedNode.value;
     }
 
     @Override
