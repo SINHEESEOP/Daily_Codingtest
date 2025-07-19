@@ -107,22 +107,37 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     @Override
     public E remove(int index) {
-        if (size <= index || index < 0) throw new IndexOutOfBoundsException();
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+
+        Node <E> temp;
         if (size == 1) {
-            Node<E> temp = head;
+            temp = head;
             head = tail = null;
             size--;
             return temp.value;
         }
 
-        Node<E> temp = head;
-        for (int i = 1; i < index; i++) {
+        if (index == 0) {
+            temp = head;
+            head = temp.next;
+            size--;
+            return temp.value;
+        }
+
+        temp = head;
+        for (int i = 0; i < index - 1; i++) {
             temp = temp.next;
         }
-        Node<E> temp2 = temp.next;
-        temp.next = temp.next.next;
+        Node<E> result = temp.next;
+
+        if(temp.next.next == null){
+            temp.next = null;
+            tail = temp;
+        } else {
+            temp.next = temp.next.next;
+        }
         size--;
-        return temp2.value;
+        return result.value;
     }
 
     // 그려보면서 이해해야 할 듯
@@ -162,7 +177,15 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        if (o == null) return -1;
+
+        Node<E> temp = head;
+        int index = 0;
+        while (temp != null) {
+            if (temp.value != null && temp.value.equals(o)) return index;
+            index++;
+        }
+        return -1;
     }
 
 }
