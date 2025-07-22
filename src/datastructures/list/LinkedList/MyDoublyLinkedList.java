@@ -20,22 +20,44 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
 
     @Override
     public E get(int index) {
-        return null;
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+
+        Node<E> temp = extractedNode(index);
+        return temp.value;
     }
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
     public void add(E e) {
+        if (e == null) throw new NullPointerException();
+        if (size == 0) {
+            head = new Node<>(e);
+            tail = head;
+            size++;
+            return;
+        }
 
+        tail.next = new Node<>(e);
+        tail = tail.next;
+        size++;
     }
 
     @Override
     public void add(int index, E e) {
 
+
+    }
+
+    private Node<E> extractedNode(int index) {
+        Node<E> temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
     }
 
     @Override
