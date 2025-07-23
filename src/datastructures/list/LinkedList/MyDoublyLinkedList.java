@@ -3,6 +3,8 @@ package datastructures.list.LinkedList;
 import datastructures.list.MyDeque;
 import datastructures.list.MyList;
 
+import java.util.NoSuchElementException;
+
 public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
 
     private static class Node<E> {
@@ -48,26 +50,49 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
 
     @Override
     public void add(int index, E e) {
-
-
-    }
-
-    private Node<E> extractedNode(int index) {
-        Node<E> temp = head;
-        for (int i = 0; i < index; i++) {
-            temp = temp.next;
-        }
-        return temp;
+        // 내일 다시 어떤 조건들이 있는지 어떤 분기가 있느지, 어떤 예외가 있는지 먼저 분석 구상하고 코드 짜기.
     }
 
     @Override
     public E set(int index, E e) {
+        // 다시
         return null;
     }
 
     @Override
     public E remove(int index) {
-        return null;
+        // 이것도 다시.
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+        if (size == 0) throw new NoSuchElementException();
+
+        Node<E> temp = head;
+        if (index == 0) {
+            head = temp.next;
+            size--;
+            return temp.value;
+        }
+
+        if (index == size - 1) {
+            temp = tail;
+            tail = temp.prev;
+            size--;
+            return temp.value;
+        }
+
+        temp = extractedNode(index);
+        Node<E> prev = temp.prev;
+
+        if (temp.next == null) {
+            prev.next = null;
+            tail = prev;
+            size--;
+            return temp.value;
+        }
+
+        prev.next = temp.next;
+        temp.next.prev = prev;
+        size--;
+        return temp.value;
     }
 
     @Override
@@ -104,4 +129,13 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
     public E removeLast() {
         return null;
     }
+
+    private Node<E> extractedNode(int index) {
+        Node<E> temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
 }
