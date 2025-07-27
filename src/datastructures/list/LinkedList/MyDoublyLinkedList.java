@@ -51,6 +51,29 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
     @Override
     public void add(int index, E e) {
         // 내일 다시 어떤 조건들이 있는지 어떤 분기가 있느지, 어떤 예외가 있는지 먼저 분석 구상하고 코드 짜기.
+        if (index < 0 || index > size) throw new IndexOutOfBoundsException();
+        if (e == null) throw new NullPointerException();
+
+        if (index == size) {
+            addLast(e);
+            return;
+        }
+
+        if (index == 0) {
+            addFirst(e);
+            return;
+        }
+
+        Node<E> cur = extractedNode(index);
+        Node<E> prev = cur.prev;
+        Node<E> newNode = new Node<>(e);
+
+        prev.next = newNode;
+        newNode.prev = prev;
+
+        newNode.next = cur;
+        cur.prev = newNode;
+        size++;
     }
 
     @Override
@@ -102,7 +125,20 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
 
     @Override
     public void addFirst(E e) {
+        if (e == null) throw new NullPointerException();
 
+        if (size == 0) {
+            head = new Node<>(e);
+            tail = head;
+            size++;
+            return;
+        }
+
+        Node<E> newNode = new Node<>(e);
+        newNode.next = head;
+        head.prev = newNode;
+        head = newNode;
+        size++;
     }
 
     @Override
@@ -117,7 +153,20 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
 
     @Override
     public void addLast(E e) {
+        if (e == null) throw new NullPointerException();
 
+        if (size == 0) {
+            head = new Node<>(e);
+            tail = head;
+            size++;
+            return;
+        }
+
+        Node<E> newNode = new Node<>(e);
+        newNode.prev = tail;
+        tail.next = newNode;
+        tail = newNode;
+        size++;
     }
 
     @Override
