@@ -78,8 +78,14 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
 
     @Override
     public E set(int index, E e) {
-        // 다시
-        return null;
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+        if (e == null) throw new NullPointerException();
+
+        Node<E> cur = extractedNode(index);
+        E result = cur.value;
+        cur.value = e;
+
+        return result;
     }
 
     @Override
@@ -117,10 +123,21 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
         size--;
         return temp.value;
     }
-
     @Override
     public int indexOf(Object o) {
         return 0;
+    }
+
+
+    public int indexOf2(Object o) {
+        int idx = 0;
+        for (Node<E> curr = head; curr != null; curr = curr.next) {
+            if (o == null ? curr.value == null : o.equals(curr.value)) {
+                return idx;
+            }
+            idx++;
+        }
+        return -1;
     }
 
     @Override
@@ -143,7 +160,8 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
 
     @Override
     public E getFirst() {
-        return null;
+        if (size == 0) throw new NoSuchElementException();
+        return head.value;
     }
 
     @Override
@@ -171,7 +189,8 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
 
     @Override
     public E getLast() {
-        return null;
+        if (size == 0) throw new NoSuchElementException();
+        return tail.value;
     }
 
     @Override
