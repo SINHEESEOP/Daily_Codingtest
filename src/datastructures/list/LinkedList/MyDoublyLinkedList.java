@@ -4,7 +4,13 @@ import datastructures.list.MyDeque;
 import datastructures.list.MyList;
 
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
+/**
+ * 1. extractedNode 개선
+ * 2. add, addLast 리팩토링
+ * 3. removeLast 의 치명적 결함 수정.
+ */
 public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
 
     private static class Node<E> {
@@ -33,6 +39,7 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
         return size;
     }
 
+    // add 와, addLast 잘 생각해보고 리팩토링
     @Override
     public void add(E e) {
         if (e == null) throw new NullPointerException();
@@ -123,9 +130,16 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
         size--;
         return temp.value;
     }
+
     @Override
     public int indexOf(Object o) {
-        return 0;
+
+        int index = 0;
+        for (Node<E> temp = head; temp != null; temp = temp.next) {
+            if (Objects.equals(o, temp.value)) return index;
+            index++;
+        }
+        return -1;
     }
 
 
@@ -166,7 +180,19 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
 
     @Override
     public E removeFirst() {
-        return null;
+        if (size == 0) throw new NoSuchElementException();
+
+        E temp = head.value;
+
+        if (size == 1) {
+            head = tail = null;
+            size--;
+            return temp;
+        }
+
+        head = head.next;
+        size--;
+        return temp;
     }
 
     @Override
@@ -195,9 +221,23 @@ public class MyDoublyLinkedList<E> implements MyDeque<E>, MyList<E> {
 
     @Override
     public E removeLast() {
-        return null;
+        if (size == 0) throw new NoSuchElementException();
+
+        if (size == 1) {
+            return removeFirst();
+        }
+
+        E temp = tail.value;
+        tail = tail.prev;
+        // 이런 디테일 중요함. 항상 생각을 여러번 하셈.
+        // 일부러 지웠음, 디테일 코드 너가 채워 넣어보셈. 부족한게 하나 있음.
+
+        //
+        size--;
+        return temp;
     }
 
+    // 현재 앞에서부터 조회, 성능 2배 올릴 수 있는 방법 있음
     private Node<E> extractedNode(int index) {
         Node<E> temp = head;
         for (int i = 0; i < index; i++) {
