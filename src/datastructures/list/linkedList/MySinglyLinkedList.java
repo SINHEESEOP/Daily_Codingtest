@@ -1,4 +1,4 @@
-package datastructures.list.LinkedList;
+package datastructures.list.linkedList;
 
 import datastructures.list.MyList;
 

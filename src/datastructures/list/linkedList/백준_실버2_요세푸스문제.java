@@ -1,4 +1,4 @@
-package datastructures.list.LinkedList;
+package datastructures.list.linkedList;
 
 import java.io.BufferedReader;
 import java.io.IOException;

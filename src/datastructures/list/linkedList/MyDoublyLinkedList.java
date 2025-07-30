@@ -1,6 +1,6 @@
-package datastructures.list.LinkedList;
+package datastructures.list.linkedList;
 
-import datastructures.list.MyDeque;
+import datastructures.Queue.MyDeque;
 import datastructures.list.MyList;
 
 import java.util.NoSuchElementException;

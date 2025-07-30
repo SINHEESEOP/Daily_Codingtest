@@ -18,8 +18,15 @@ public interface MyList<E> {
 
     // ------ 삭제 ------
     E remove(int index);       // index 위치 노드 제거 & 값 반환
+    default void clear() {           // 전체 삭제 (선택적, 구현체에서 오버라이딩)
+        while (!isEmpty()) {
+            remove(size() - 1);
+        }
+    }
 
     // ------ 탐색 ------
     int indexOf(Object o);     // 첫 번째 등장 위치, 없으면 -1
-
+    default boolean contains(Object o) {
+        return indexOf(o) != -1;
+    }
 }
