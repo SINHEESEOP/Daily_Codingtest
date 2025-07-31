@@ -16,6 +16,7 @@ public class 백준_실버2_스택수열 {
     static Stack<Integer> stack = new Stack<>();
     static List<String> result;
 
+    // 문제 해결 논리는 맞음. 정확한 출력이나, NO 분기는 없지만 추가하는게 어렵지 않음
     public static void main(String[] args) throws IOException {
         N = Integer.parseInt(br.readLine());
         K = Integer.parseInt(br.readLine());
@@ -29,6 +30,7 @@ public class 백준_실버2_스택수열 {
             if (K == stack.peek()) {
                 stack.pop();
                 result.add("-");
+                // 문제가 생기는 부분 //힌트로 백준 입력 조건예시 1번 잘보면됨
                 K = Integer.parseInt(br.readLine());
             } else if (sequence != N) {
                 stack.push(++sequence);
