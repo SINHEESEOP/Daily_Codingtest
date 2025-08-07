@@ -1,10 +1,9 @@
-package datastructures.list.vector.stack;
+package hard_queue.pass;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
-import java.util.StringTokenizer;
 
 public class 백준_실버2_쇠막대기 {
 
