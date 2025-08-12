@@ -1,4 +1,4 @@
-package hard_queue.pass;
+package datastructures.list.vector.stack;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,16 +15,21 @@ public class 백준_실버2_쇠막대기 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = br.readLine();
+        char prev = 0;
         for (char c : s.toCharArray()) {
             if (c == '(') {
-                stick++;
-                result++;
                 stack.push(c);
-            } else if (c == ')') {
-                stick--;
-                result--;
-                result += stick;
-            }
+                prev = c;
+            } else {
+                if (prev == '(') {
+                    stack.pop();
+                    prev = c;
+                    result += stack.size();
+                } else {
+                    stack.pop();
+                    result++;
+                }
+             }
         }
         System.out.println(result);
     }
