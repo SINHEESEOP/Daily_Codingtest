@@ -9,7 +9,7 @@ public class 백준_실버2_쇠막대기 {
 
     static int stick;
     static int result;
-    static Stack<String> stack = new Stack<>();
+    static Stack<Character> stack = new Stack<>();
     // ()(((()())(())()))(())
 
     public static void main(String[] args) throws IOException {
@@ -17,23 +17,16 @@ public class 백준_실버2_쇠막대기 {
         String s = br.readLine();
         for (char c : s.toCharArray()) {
             if (c == '(') {
-                stack.push("(");
                 stick++;
                 result++;
+                stack.push(c);
             } else if (c == ')') {
-                if (stack.lastElement().equals("(")) {
-                    stick--;
-                    result--;
-                    result += stick;
-                    stack.pop();
-                } else {
-                    stack.pop();
-                    stick--;
-                }
+                stick--;
+                result--;
+                result += stick;
             }
         }
         System.out.println(result);
     }
-
 
 }
