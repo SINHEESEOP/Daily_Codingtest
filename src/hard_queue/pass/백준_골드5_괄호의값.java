@@ -21,32 +21,31 @@ public class 백준_골드5_괄호의값 {
             if (c == '(') {
                 st.push(c);
                 mul *= 2;
-                prev = '(';
-            } else if (c == '[') {
-                st.push(c);
-                mul *= 3;
-                prev = '[';
+                prev = c;
             } else if (c == ')') {
                 if (st.isEmpty() || st.peek() != '(') {
                     System.out.println(0);
                     return;
                 }
-                if (prev == '(') ans += mul; // "()" 바로 닫힘이면 현재 배수 더함
+
+                if (prev == '(') ans += mul;
+                prev = c;
                 st.pop();
                 mul /= 2;
-                prev = ')';
+            } else if (c == '[') {
+                st.push(c);
+                mul *= 3;
+                prev = c;
             } else if (c == ']') {
                 if (st.isEmpty() || st.peek() != '[') {
                     System.out.println(0);
                     return;
                 }
-                if (prev == '[') ans += mul; // "[]" 바로 닫힘이면 현재 배수 더함
+
+                if (prev == '[') ans += mul;
+                prev = c;
                 st.pop();
                 mul /= 3;
-                prev = ']';
-            } else {
-                System.out.println(0);
-                return;
             }
         }
         System.out.println(st.isEmpty() ? ans : 0);
