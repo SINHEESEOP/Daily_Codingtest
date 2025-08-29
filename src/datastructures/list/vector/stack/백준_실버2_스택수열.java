@@ -13,7 +13,23 @@ public class 백준_실버2_스택수열 {
 
     public static void main(String[] args) throws IOException {
 
-        // 다시 풀어보기
+        N = Integer.parseInt(br.readLine());
+        for (int i = 0; i < N; i++) {
+            int target = Integer.parseInt(br.readLine());
 
+            while (sequence <= target) {
+                stack.push(sequence++);
+                sb.append("+\n");
+            }
+
+            if (stack.isEmpty() || stack.peek() != target) {
+                System.out.println("NO");
+                return;
+            }
+
+            stack.pop();
+            sb.append("-\n");
+        }
+        System.out.println(sb);
     }
 }
