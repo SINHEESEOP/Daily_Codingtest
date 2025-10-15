@@ -7,7 +7,11 @@ public class 백준_골드5_탑 {
     // 스택에 (인덱스, 높이) 보관
     static class Tower {
         int idx, h;
-        Tower(int idx, int h) { this.idx = idx; this.h = h; }
+
+        Tower(int idx, int h) {
+            this.idx = idx;
+            this.h = h;
+        }
     }
 
     public static void main(String[] args) throws Exception {
@@ -30,6 +34,6 @@ public class 백준_골드5_탑 {
 
             stack.push(new Tower(i, h));
         }
-        System.out.print(sb.toString());
+        System.out.print(sb);
     }
 }
