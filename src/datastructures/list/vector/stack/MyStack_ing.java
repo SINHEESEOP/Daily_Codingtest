@@ -5,6 +5,9 @@ import datastructures.list.vector.MyVector;
 // 이거 만들어야 되네
 public class MyStack_ing<E> extends MyVector<E> {
 
+    // 테스트 위해서 일단 막 만든 변수임 지우셈
+    static final int a = 20;
+
     // 기본 생성자
     public MyStack_ing() { }
 
