@@ -2,13 +2,14 @@ package datastructures.list.vector.stack;
 
 import datastructures.list.vector.MyVector;
 
-public class MyStack<E> extends MyVector<E> {
+// 이거 만들어야 되네
+public class MyStack_ing<E> extends MyVector<E> {
 
     // 기본 생성자
-    public MyStack() { }
+    public MyStack_ing() { }
 
     // 초기 용량 지정 생성자
-    public MyStack(int initialCapacity) { }
+    public MyStack_ing(int initialCapacity) { }
 
     // 스택 맨 위에 요소 추가(push)
     // 반환값: 추가된 요소
