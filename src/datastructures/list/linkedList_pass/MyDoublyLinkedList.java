@@ -1,4 +1,4 @@
-package datastructures.list.linkedList;
+package datastructures.list.linkedList_pass;
 
 import datastructures.Queue.MyDeque;
 import datastructures.list.MyList;

@@ -2,21 +2,19 @@ package datastructures.list.arrayList;
 
 import datastructures.list.MyList;
 
-import java.util.Arrays;
-
-public class MyArrayList<E> implements MyList<E> {
+public class MyArrayList_ing<E> implements MyList<E> {
 
     // 내부 필드
     private Object[] elementData;
     private int size;
 
     // 생성자
-    public MyArrayList() {
+    public MyArrayList_ing() {
         this.elementData = new Object[10]; // 디폴트 초기 용량 (자바 ArrayList도 기본 10)
         this.size = 0;
     }
 
-    public MyArrayList(int initialCapacity) {
+    public MyArrayList_ing(int initialCapacity) {
         if (initialCapacity < 0) {
             throw new IllegalArgumentException("Illegal Capacity: " + initialCapacity);
         }

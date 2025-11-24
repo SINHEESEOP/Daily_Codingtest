@@ -25,10 +25,14 @@ public class MyVector<E> implements MyList<E> {
     protected int size;
 
     // 기본 생성자: 기본 용량으로 배열 초기화
-    public MyVector() { }
+    public MyVector() {
+
+    }
 
     // 초기 용량 지정 생성자
-    public MyVector(int initialCapacity) { }
+    public MyVector(int initialCapacity) {
+
+    }
 
     // 지정한 인덱스의 요소를 반환
     @Override
