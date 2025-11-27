@@ -75,32 +75,52 @@ public class MyVector<E> implements MyList<E> {
         if (index < 0 || index > size) throw new IndexOutOfBoundsException();
         ensureCapacity();
 
-        if (index == size) {
-            elementData[size++] = e;
-        } else {
-            for (int i = size - 1; i >= index; i--) {
-                elementData[i + 1] = elementData[i];
-            }
-            elementData[index] = e;
+        for (int i = size - 1; i >= index; i--) {
+            elementData[i + 1] = elementData[i];
         }
+        elementData[index] = e;
+        size++;
+
     }
 
     // 지정한 위치의 요소를 새로운 값으로 교체하고, 이전 값을 반환
     @Override
     public E set(int index, E e) {
+        if (e == null) throw new NullPointerException();
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
 
-        return null;
+        E result = get(index);
+        elementData[index] = e;
+
+        return result;
     }
 
     // 지정한 위치의 요소를 제거하고, 제거한 값을 반환
     @Override
     public E remove(int index) {
-        return null;
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+
+        @SuppressWarnings("unchecked")
+        E value = (E) elementData[index];
+
+        // 올바른 방향: 인덱스(삭제된 곳)부터 끝까지 정방향 순회
+        for (int i = index; i < size - 1; i++) {
+            elementData[i] = elementData[i + 1];
+        }
+
+        // 2. [필수] 사이즈 줄이기 & 마지막 칸 비우기 (추가 필요!)
+        size--;                 // 사이즈를 1 줄임 (이제 size는 유효한 데이터의 끝을 가리킴)
+        elementData[size] = null; // 마지막에 남은 중복 데이터(찌꺼기)를 삭제 (메모리 누수 방지)
+
+        return value;
     }
 
     // 주어진 객체와 같은 값을 갖는 첫 번째 요소의 인덱스를 반환 (없으면 -1)
     @Override
     public int indexOf(Object o) {
+        for (int i = 0; i < size; i++) {
+            if (elementData[i].equals(o)) return i;
+        }
         return -1;
     }
 
