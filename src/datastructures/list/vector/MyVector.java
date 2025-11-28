@@ -125,7 +125,7 @@ public class MyVector<E> implements MyList<E> {
     }
 
 
-    private void ensureCapacity() {
+    protected void ensureCapacity() {
         if (size == elementData.length) {
             Object[] newData = new Object[elementData.length * 2];
 //            System.arraycopy(elementData, 0, newData, 0, size);
