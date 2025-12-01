@@ -1,19 +1,18 @@
 package datastructures.list.vector.stack;
 
-import datastructures.list.vector.MyVector;
+import datastructures.list.vector.MyVector_pass;
 
 import java.util.EmptyStackException;
-import java.util.NoSuchElementException;
 
-public class MyStack_ing<E> extends MyVector<E> {
+public class MyStack_pass<E> extends MyVector_pass<E> {
 
     // 기본 생성자
-    public MyStack_ing() {
+    public MyStack_pass() {
         super();
     }
 
     // 초기 용량 지정 생성자
-    public MyStack_ing(int initialCapacity) {
+    public MyStack_pass(int initialCapacity) {
         super(initialCapacity);
     }
 
