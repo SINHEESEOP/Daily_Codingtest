@@ -2,14 +2,12 @@ package datastructures.list.linkedList_pass;
 
 import datastructures.list.MyList;
 
-import java.util.NoSuchElementException;
-
 /**
  * 이거 단방향 리스트라, MyDeque 는 상속받을 필요 X
  * 단반향도 맨앞과 맨뒤에 연산이 가능하지만, 맨뒤에 넣거나 삭제하는 경우 효율 X
  * 양방향에서 둘다 구현 하는 걸로.
  */
-public class MySinglyLinkedList<E> implements MyList<E> {
+public class MySinglyLinkedList_pass<E> implements MyList<E> {
 
     private Node<E> head, tail;
     private int size;
@@ -26,7 +24,7 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     @Override
     public E get(int index) {
-        if (size == 0) throw new NoSuchElementException();
+        if (size == 0) throw new IndexOutOfBoundsException();
         if (size - 1 < index || 0 > index) throw new IndexOutOfBoundsException();
 
         Node <E> temp = head;
@@ -105,9 +103,14 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         return oldValue;
     }
 
+    // 개선해보기
     @Override
     public E remove(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException(
+                    "Index: " + index + ", Size: " + size
+            );
+        }
 
         Node <E> temp;
         if (size == 1) {
@@ -140,7 +143,7 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         return result.value;
     }
 
-    // 그려보면서 이해해야 할 듯
+    //
     public E remove2(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException(
@@ -183,6 +186,7 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         int index = 0;
         while (temp != null) {
             if (temp.value != null && temp.value.equals(o)) return index;
+            temp = temp.next;
             index++;
         }
         return -1;
