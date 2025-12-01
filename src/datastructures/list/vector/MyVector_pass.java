@@ -16,7 +16,7 @@ import datastructures.list.MyList;
  * <p>
  * 실질적으로 ArrayList와 유사하지만, 필요 시 Vector처럼 Stack 등에서 상속하여 사용할 수 있습니다.
  */
-public class MyVector<E> implements MyList<E> {
+public class MyVector_pass<E> implements MyList<E> {
 
     // 내부 데이터를 저장하는 배열
     protected Object[] elementData;
@@ -25,13 +25,13 @@ public class MyVector<E> implements MyList<E> {
     protected int size;
 
     // 기본 생성자: 기본 용량으로 배열 초기화
-    public MyVector() {
+    public MyVector_pass() {
         this.elementData = new Object[10];
         this.size = 0;
     }
 
     // 초기 용량 지정 생성자
-    public MyVector(int initialCapacity) {
+    public MyVector_pass(int initialCapacity) {
         if (initialCapacity <= 0) {
             throw new IllegalArgumentException("Illegal Capacity: " + initialCapacity);
         }
