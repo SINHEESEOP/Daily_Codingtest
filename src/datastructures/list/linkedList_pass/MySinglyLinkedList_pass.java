@@ -22,16 +22,34 @@ public class MySinglyLinkedList_pass<E> implements MyList<E> {
         }
     }
 
+    // [중복 제거 1] 노드 탐색 로직 공통화
+    private Node<E> getNode(int index) {
+        Node<E> x = head;
+        for (int i = 0; i < index; i++) {
+            x = x.next;
+        }
+        return x;
+    }
+
+    // [중복 제거 2] 범위 체크 로직 공통화
+    private void checkElementIndex(int index) {
+        if (index < 0 || index >= size)
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+    }
+
+    private void checkPositionIndex(int index) {
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+    }
+
+    private void checkNull(Object obj) {
+        if (obj == null) throw new NullPointerException();
+    }
+
     @Override
     public E get(int index) {
-        if (size == 0) throw new IndexOutOfBoundsException();
-        if (size - 1 < index || 0 > index) throw new IndexOutOfBoundsException();
-
-        Node <E> temp = head;
-        for (int i = 0; i < index; i++) {
-            temp = temp.next;
-        }
-        return temp.value;
+        checkElementIndex(index);
+        return getNode(index).value;
     }
 
     @Override
@@ -41,7 +59,7 @@ public class MySinglyLinkedList_pass<E> implements MyList<E> {
 
     @Override
     public void add(E e) {
-        if (e == null) throw new NullPointerException();
+        checkNull(e);
 
         if (head == null) {
             head = new Node<>(e);
@@ -57,33 +75,32 @@ public class MySinglyLinkedList_pass<E> implements MyList<E> {
 
     @Override
     public void add(int index, E e) {
-        if (e == null)
-            throw new NullPointerException();
-
-        if (index > size || index < 0)
-            throw new IndexOutOfBoundsException();
+        checkNull(e);
+        checkPositionIndex(index);
 
         if (index == 0) {
-            Node<E> tempNode = head;
-            head = new Node<>(e);
-            head.next = tempNode;
+            Node<E> newNode = new Node<>(e); // 변수명 가독성 좋게 변경
+            newNode.next = head;
+            head = newNode;
+
+            if (size == 0) { // size가 0이었다면 tail도 head를 가리킴
+                tail = head;
+            }
             size++;
-            if (size == 1) tail = head;
             return;
         }
 
-        Node<E> tempNode = head;
-        for (int i = 0; i < index - 1; i++) {
-            tempNode = tempNode.next;
-        }
-        Node<E> prevNode = tempNode;
-        Node<E> nextNode = tempNode.next;
+        Node<E> prevNode = getNode(index - 1);
 
-        prevNode.next = new Node<>(e);
-        prevNode.next.next = nextNode;
+        Node<E> newNode = new Node<>(e);
+        Node<E> nextNode = prevNode.next;
 
-        if (size == index) {
-            tail = prevNode.next;
+        prevNode.next = newNode;
+        newNode.next = nextNode;
+
+        // 맨 뒤에 추가된 경우 tail 갱신
+        if (newNode.next == null) { // (size == index)와 같은 의미
+            tail = newNode;
         }
 
         size++;
@@ -91,13 +108,10 @@ public class MySinglyLinkedList_pass<E> implements MyList<E> {
 
     @Override
     public E set(int index, E e) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+        checkNull(e);
+        checkElementIndex(index);
 
-        Node<E> temp = head;
-        for (int i = 0; i < index; i++) {
-            temp = temp.next;
-        }
-
+        Node<E> temp = getNode(index);
         E oldValue = temp.value;
         temp.value = e;
         return oldValue;
