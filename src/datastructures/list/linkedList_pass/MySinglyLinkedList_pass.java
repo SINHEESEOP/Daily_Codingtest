@@ -117,9 +117,7 @@ public class MySinglyLinkedList_pass<E> implements MyList<E> {
         return oldValue;
     }
 
-    // 개선해보기
-    @Override
-    public E remove(int index) {
+    public E remove_old(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException(
                     "Index: " + index + ", Size: " + size
@@ -157,8 +155,8 @@ public class MySinglyLinkedList_pass<E> implements MyList<E> {
         return result.value;
     }
 
-    //
-    public E remove2(int index) {
+    @Override
+    public E remove(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException(
                     "Index: " + index + ", Size: " + size
