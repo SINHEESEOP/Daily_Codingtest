@@ -157,11 +157,7 @@ public class MySinglyLinkedList_pass<E> implements MyList<E> {
 
     @Override
     public E remove(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException(
-                    "Index: " + index + ", Size: " + size
-            );
-        }
+        checkElementIndex(index);
 
         Node<E> removedNode;
         if (index == 0) {
