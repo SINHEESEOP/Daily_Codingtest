@@ -1,4 +1,4 @@
-package datastructures.hash;
+package algorithms.hash;
 
 import java.io.*;
 import java.util.*;
