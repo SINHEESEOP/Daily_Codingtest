@@ -1,6 +1,6 @@
 package datastructures.list.linkedList_pass;
 
-import datastructures.Queue.MyDeque;
+import datastructures.Queue.deque.MyDeque;
 import datastructures.list.MyList;
 
 public class MyDoublyLinkedList_pass<E> implements MyDeque<E>, MyList<E> {

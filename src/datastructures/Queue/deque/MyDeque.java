@@ -1,4 +1,6 @@
-package datastructures.Queue;
+package datastructures.Queue.deque;
+
+import datastructures.Queue.MyQueue;
 
 /**
  * 현재 MySinglyLinkedList, MyDoublyLinkedList 에서 implement 한 상태임.
