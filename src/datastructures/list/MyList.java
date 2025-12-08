@@ -3,7 +3,7 @@ package datastructures.list;
 public interface MyList<E> {
 
     // ------ 조회 ------
-    E get(int index);          // IndexOutOfBoundsException
+    E get(int index);
     int size();                // 현재 요소 수
     default boolean isEmpty() {
         return size() == 0;
