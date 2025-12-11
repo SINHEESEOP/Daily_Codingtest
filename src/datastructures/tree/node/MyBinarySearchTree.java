@@ -34,11 +34,70 @@ public class MyBinarySearchTree<E> implements MyBinaryTree<E> {
         this.comparator = comparator;
     }
 
+    // [도우미 함수] Comparator가 있으면 그거 쓰고, 없으면 Comparable(형변환) 사용
+    private int compare(E a, E b) {
+        if (comparator != null) {
+            return comparator.compare(a, b);
+        } else {
+            // comparator가 없으면 E는 무조건 Comparable이어야 함 (안 그러면 여기서 에러 발생)
+            if (a == null) {
+                throw new NullPointerException("요소는 null일 수 없습니다.");
+            }
+            if (!(a instanceof Comparable)) {
+                throw new ClassCastException(a.getClass().getName() + " 클래스는 Comparable을 구현하지 않았습니다.");
+            }
+            @SuppressWarnings("unchecked")
+            Comparable<? super E> comp = (Comparable<? super E>) a;
+            return comp.compareTo(b);
+        }
+    }
+
     @Override
     public boolean add(E e) {
-        // TODO: BST 규칙(작왼큰오)에 맞춰 노드 추가 구현
-        // 힌트: 재귀나 반복문으로 위치 찾아서 new Node(e) 연결
-        return false;
+        // 1. 트리가 비어있을 때 (첫 노드)
+        if (root == null) {
+            root = new Node<>(e);
+            size++;
+            return true;
+        }
+
+        // 2. 탐색 및 삽입 (반복문 사용)
+        Node<E> current = root;
+        Node<E> parent;
+        int compResult;
+
+        while (true) {
+            parent = current;
+            // 아까 만든 도우미 함수로 값 비교
+            compResult = compare(e, current.value);
+
+            // [중복] 값이 같으면 넣지 않고 false 반환
+            if (compResult == 0) {
+                return false;
+            }
+
+            // [왼쪽] 입력값이 더 작음 -> 왼쪽으로 이동
+            else if (compResult < 0) {
+                current = current.left;
+                // 왼쪽 자리가 비어있으면 거기 차지!
+                if (current == null) {
+                    parent.left = new Node<>(e);
+                    size++;
+                    return true;
+                }
+            }
+
+            // [오른쪽] 입력값이 더 큼 -> 오른쪽으로 이동
+            else {
+                current = current.right;
+                // 오른쪽 자리가 비어있으면 거기 차지!
+                if (current == null) {
+                    parent.right = new Node<>(e);
+                    size++;
+                    return true;
+                }
+            }
+        }
     }
 
     @Override
