@@ -1,15 +1,13 @@
 package datastructures.tree.node;
 
 import datastructures.tree.MyBinaryTree;
-
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Queue;
 
-/**
- * 목표: Linked 스타일로 노드를 연결하고, "작은 건 왼쪽, 큰 건 오른쪽" 규칙을 구현합니다.
- */
 public class MyBinarySearchTree<E> implements MyBinaryTree<E> {
 
-    // [Node 클래스] 주소 연결 방식
+    // 노드 클래스: 데이터를 저장하고 좌우 자식 노드를 연결
     private static class Node<E> {
         E value;
         Node<E> left;
@@ -24,7 +22,7 @@ public class MyBinarySearchTree<E> implements MyBinaryTree<E> {
 
     private Node<E> root;
     private int size;
-    private final Comparator<? super E> comparator; // 정렬 기준 (없으면 Comparable)
+    private final Comparator<? super E> comparator; // 사용자 정의 정렬 기준
 
     public MyBinarySearchTree() {
         this.comparator = null;
@@ -34,63 +32,59 @@ public class MyBinarySearchTree<E> implements MyBinaryTree<E> {
         this.comparator = comparator;
     }
 
-    // [도우미 함수] Comparator가 있으면 그거 쓰고, 없으면 Comparable(형변환) 사용
+    // 비교 로직: Comparator가 있으면 사용하고, 없으면 Comparable로 형변환하여 수행
+    // comparator가 있든 없든, 이 트리는 null을 데이터로 취급하지 않는다.
+    @SuppressWarnings("unchecked")
     private int compare(E a, E b) {
+        if (a == null || b == null) {
+            throw new NullPointerException("요소는 null일 수 없습니다.");
+        }
+
         if (comparator != null) {
             return comparator.compare(a, b);
-        } else {
-            // comparator가 없으면 E는 무조건 Comparable이어야 함 (안 그러면 여기서 에러 발생)
-            if (a == null) {
-                throw new NullPointerException("요소는 null일 수 없습니다.");
-            }
-            if (!(a instanceof Comparable)) {
-                throw new ClassCastException(a.getClass().getName() + " 클래스는 Comparable을 구현하지 않았습니다.");
-            }
-            @SuppressWarnings("unchecked")
-            Comparable<? super E> comp = (Comparable<? super E>) a;
-            return comp.compareTo(b);
         }
+
+        if (!(a instanceof Comparable)) {
+            throw new ClassCastException(a.getClass().getName() + " 클래스는 Comparable을 구현하지 않았습니다.");
+        }
+        return ((Comparable<? super E>) a).compareTo(b);
     }
+
 
     @Override
     public boolean add(E e) {
-        // 1. 트리가 비어있을 때 (첫 노드)
+        // 1. 트리가 비어있는 경우 루트로 설정
         if (root == null) {
             root = new Node<>(e);
             size++;
             return true;
         }
 
-        // 2. 탐색 및 삽입 (반복문 사용)
+        // 2. 탐색 및 삽입 위치 결정 (반복문 사용)
         Node<E> current = root;
         Node<E> parent;
         int compResult;
 
         while (true) {
             parent = current;
-            // 아까 만든 도우미 함수로 값 비교
             compResult = compare(e, current.value);
 
-            // [중복] 값이 같으면 넣지 않고 false 반환
+            // 중복 값은 허용하지 않음
             if (compResult == 0) {
                 return false;
             }
-
-            // [왼쪽] 입력값이 더 작음 -> 왼쪽으로 이동
+            // 입력값이 더 작으면 왼쪽으로 이동
             else if (compResult < 0) {
                 current = current.left;
-                // 왼쪽 자리가 비어있으면 거기 차지!
                 if (current == null) {
                     parent.left = new Node<>(e);
                     size++;
                     return true;
                 }
             }
-
-            // [오른쪽] 입력값이 더 큼 -> 오른쪽으로 이동
+            // 입력값이 더 크면 오른쪽으로 이동
             else {
                 current = current.right;
-                // 오른쪽 자리가 비어있으면 거기 차지!
                 if (current == null) {
                     parent.right = new Node<>(e);
                     size++;
@@ -101,48 +95,171 @@ public class MyBinarySearchTree<E> implements MyBinaryTree<E> {
     }
 
     @Override
-    public boolean remove(Object o) {
-        // TODO: 삭제 로직 (가장 어려움)
-        // 1. 자식 0개: 그냥 삭제
-        // 2. 자식 1개: 내 자식을 우리 부모님께 입양
-        // 3. 자식 2개: 오른쪽 서브트리에서 제일 작은 놈(Successor) 데려오기
-        return false;
+    @SuppressWarnings("unchecked")
+    public boolean contains(Object o) {
+        if (root == null || o == null) return false;
+
+        E target = (E) o;
+        Node<E> current = root;
+
+        // 루트부터 시작하여 값을 비교하며 탐색
+        while (current != null) {
+            int result = compare(target, current.value);
+
+            if (result == 0) {
+                return true; // 값 발견
+            } else if (result < 0) {
+                current = current.left; // 왼쪽 서브트리로 이동
+            } else {
+                current = current.right; // 오른쪽 서브트리로 이동
+            }
+        }
+        return false; // 탐색 실패
     }
 
     @Override
-    public boolean contains(Object o) {
-        // TODO: 루트부터 작으면 왼쪽, 크면 오른쪽으로 가며 찾기
-        return false;
+    @SuppressWarnings("unchecked")
+    public boolean remove(Object o) {
+        if (root == null || o == null) return false;
+
+        int oldSize = size;
+        // 재귀 메서드를 호출하여 삭제 수행 후, 변경된 루트 노드를 받아옴
+        root = deleteNode(root, (E) o);
+
+        // 삭제 전후 사이즈 비교를 통해 성공 여부 반환
+        return size < oldSize;
     }
 
+    // 노드 삭제 내부 로직 (재귀 방식)
+    private Node<E> deleteNode(Node<E> node, E target) {
+        // 종료 조건: 삭제할 노드를 찾지 못한 경우
+        if (node == null) return null;
+
+        int cmp = compare(target, node.value);
+
+        // 1. 탐색 단계: 타겟이 현재 노드보다 작으면 왼쪽, 크면 오른쪽으로 재귀 호출
+        if (cmp < 0) {
+            node.left = deleteNode(node.left, target);
+        } else if (cmp > 0) {
+            node.right = deleteNode(node.right, target);
+        }
+        // 2. 삭제 단계: 타겟 노드 발견
+        else {
+            size--;
+
+            // Case 1: 자식 노드가 없는 경우 (Leaf Node)
+            if (node.left == null && node.right == null) {
+                return null; // 해당 노드 제거
+            }
+            // Case 2: 오른쪽 자식만 있는 경우
+            else if (node.left == null) {
+                return node.right; // 오른쪽 자식을 현재 위치로 대체
+            }
+            // Case 2: 왼쪽 자식만 있는 경우
+            else if (node.right == null) {
+                return node.left; // 왼쪽 자식을 현재 위치로 대체
+            }
+            // Case 3: 자식 노드가 둘 다 있는 경우
+            else {
+                // 오른쪽 서브트리에서 가장 작은 값(Successor)을 찾음
+                Node<E> successor = getMinNode(node.right);
+
+                // 현재 노드의 값을 후계자의 값으로 교체 (구조 변경 없이 값만 변경)
+                node.value = successor.value;
+
+                // 아래 재귀 호출에서 후계자 노드 삭제 시 size가 한 번 더 감소하므로, 이를 보정하기 위해 증가
+                size++;
+
+                // 값을 가져온 후계자 노드는 오른쪽 서브트리에서 삭제
+                node.right = deleteNode(node.right, successor.value);
+            }
+        }
+        return node; // 변경된 트리 구조 반환
+    }
+
+    // 서브트리의 최솟값 노드 탐색 (왼쪽 끝까지 이동)
+    private Node<E> getMinNode(Node<E> node) {
+        while (node.left != null) {
+            node = node.left;
+        }
+        return node;
+    }
+
+    // 전위 순회 (Pre-Order): Root -> Left -> Right
     @Override
     public void preOrder() {
-        // TODO: 전위 순회 구현 (보통 재귀 사용)
+        preOrderRec(root);
+        System.out.println();
     }
 
+    private void preOrderRec(Node<E> node) {
+        if (node == null) return;
+        System.out.print(node.value + " ");
+        preOrderRec(node.left);
+        preOrderRec(node.right);
+    }
+
+    // 중위 순회 (In-Order): Left -> Root -> Right (정렬된 순서 보장)
     @Override
     public void inOrder() {
-        // TODO: 중위 순회 구현 (결과가 정렬된 상태로 나옴)
+        inOrderRec(root);
+        System.out.println();
     }
 
+    private void inOrderRec(Node<E> node) {
+        if (node == null) return;
+        inOrderRec(node.left);
+        System.out.print(node.value + " ");
+        inOrderRec(node.right);
+    }
+
+    // 후위 순회 (Post-Order): Left -> Right -> Root
     @Override
     public void postOrder() {
-        // TODO: 후위 순회 구현
+        postOrderRec(root);
+        System.out.println();
     }
 
+    private void postOrderRec(Node<E> node) {
+        if (node == null) return;
+        postOrderRec(node.left);
+        postOrderRec(node.right);
+        System.out.print(node.value + " ");
+    }
+
+    // 레벨 순회 (Level-Order): 층별 순회 (Queue 사용)
     @Override
     public void levelOrder() {
-        // TODO: 큐(Queue)를 이용해서 구현
+        if (root == null) return;
+
+        Queue<Node<E>> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            Node<E> current = queue.poll();
+            System.out.print(current.value + " ");
+
+            // 왼쪽 자식 먼저 큐에 추가
+            if (current.left != null) queue.add(current.left);
+            // 오른쪽 자식 큐에 추가
+            if (current.right != null) queue.add(current.right);
+        }
+        System.out.println();
     }
 
     @Override
-    public int size() { return size; }
+    public int size() {
+        return size;
+    }
 
     @Override
-    public boolean isEmpty() { return size == 0; }
+    public boolean isEmpty() {
+        return size == 0;
+    }
 
     @Override
     public void clear() {
-        // TODO: 모든 노드 연결 끊기
+        root = null; // 루트 참조를 제거하면 GC에 의해 메모리 해제
+        size = 0;
     }
 }
